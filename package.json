@@ -1,0 +1,24 @@
+{
+  "name": "study-app",
+  "version": "1.0.0",
+  "description": "A study application built with Electron",
+  "author": "Karim <your.email@example.com>",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win"
+  },
+  "build": {
+    "appId": "com.karim.studyapp",
+    "productName": "StudyApp",
+    "asar": true,
+    "directories": { "output": "release", "buildResources": "build" },
+    "files": ["main.js", "preload.js", "renderer.js", "index.html", "package.json"],
+    "win": { "target": "nsis", "icon": "build/icon.ico" },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true }
+  },
+  "devDependencies": {
+    "electron": "28.2.0",
+    "electron-builder": "26.4.0"
+  }
+}
